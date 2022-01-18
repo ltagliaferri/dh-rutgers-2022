@@ -1,7 +1,7 @@
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/sass/");
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addPassthroughCopy("./src/js");
+  eleventyConfig.addWatchTarget("./dh-rutgers-2022/src/sass/");
+  eleventyConfig.addPassthroughCopy("./dh-rutgers-2022/src/css");
+  eleventyConfig.addPassthroughCopy("./dh-rutgers-2022/src/js");
   
   return {
     dir: {
