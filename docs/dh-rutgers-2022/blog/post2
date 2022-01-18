@@ -5,10 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA_Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+  <title>Post 2</title>
 </head>
 <body>
-  {{ content | safe }}
+  <h1>Post 2</h1>
+<p>Welcome to Post 2</p>
+
   <nav>
     <a href="/dh-rutgers-2022/">Home</a>
   </nav>
