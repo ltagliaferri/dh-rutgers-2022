@@ -1,8 +1,6 @@
 ---
-layout: layout.njk
 title: Post 2
-permalink: "dh-rutgers-2022/blog/post2"
-tags: blog
+description: The second post
 ---
 
 # Post 2

@@ -1,13 +1,12 @@
 module.exports = function(eleventyConfig) {
-  // Set custom directories for input, output, includes, and data
-  eleventyConfig.addPassthroughCopy("src/style.css");
+  eleventyConfig.addWatchTarget("./src/sass/");
+  eleventyConfig.addPassthroughCopy("./src/css");
+  eleventyConfig.addPassthroughCopy("./src/js");
   
   return {
     dir: {
       input: "src",
-      includes: "_includes",
-      data: "_data",
       output: "docs"
-    }
+    },
   };
 };
