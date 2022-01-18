@@ -11,5 +11,9 @@ _site/
 # Ignore test files
 .cache
 
+# GitHub Actions
+gh-pages
+*.pub
+
 # Misc
 .DS_Store
