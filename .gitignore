@@ -1,9 +1,6 @@
 # Ignore installed npm modules
 node_modules/
 
-# Build
-/docs
-
 # Ignore folders from source code editors
 .vscode
 .idea
