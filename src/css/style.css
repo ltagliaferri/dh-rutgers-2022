@@ -1,5 +1,5 @@
 .dark-theme {
-  color: #ffffff;
+  color: #e6e6e6;
   background-color: #202020; }
   .dark-theme .nav-list a {
     color: #ADD8E6; }
@@ -24,11 +24,18 @@ body {
   margin: 0;
   padding: 0;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #e6e6e6;
   width: 100vw;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto; }
+  li {
+    list-style-type: disc;
+  }
+
+  li li {
+    list-style-type: square;
+  }
   body nav {
     padding: 0.75rem;
     justify-content: space-between;
