@@ -6,7 +6,7 @@ The website can be accessed via [https://ltagliaferri.github.io/dh-rutgers-2022/
 
 ## Developing the site
 
-This site is built with [Eleventy](https://www.11ty.dev/) and is mostly written in HTML and markdown. If you would like to have a local version of this site, or use the site for a template, you can take the following steps. Note that this repo is set up to serve its contents on GitHub Pages, and there are a few files in this repo that are specific to this workflow. You may need to adapt some of the files to deploy the site through other means.
+This site is built with [Eleventy](https://www.11ty.dev/) and is mostly written in HTML and markdown. If you would like to have a local version of this site, or use the site for a template, you can take the following steps. Note that this repo is set up to serve its contents on GitHub Pages, and there are a few files in this repo that are specific to this workflow, and some less intuitive file pathways. You may need to adapt some of the files to deploy the site through other means.
 
 ### Step 1 — Clone the repository
 
@@ -36,7 +36,7 @@ npm run build
 
 You should receive output that files have been written.
 
-### Step 4 — Serve the site
+### Step 4 — Serve the site
 
 You can now serve the web app, by running the following.
 
