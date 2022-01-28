@@ -1,43 +1,32 @@
 .dark-theme {
-  color: #e6e6e6;
-  background-color: #202020; }
+  color: #ffffff;
+  background-color: #333333; }
   .dark-theme .nav-list a {
-    color: #ADD8E6; }
-  .dark-theme .logo a {
-    color: #ADD8E6; }
+    color: #ffffff; }
   .dark-theme .links {
     margin: 0;
     color: #ffffff; }
   .dark-theme .night-mode-btn {
-    color: #ADD8E6; }
+    color: #ffffff; }
     .dark-theme .night-mode-btn svg {
-      fill: #ADD8E6; }
+      fill: #ffffff; }
   .dark-theme .link-btn {
-    color: #ADD8E6; }
-  .dark-theme .paragraph a {
-    color: #ADD8E6; }
+    color: #ffffff; }
   .dark-theme .blog-single {
     color: #ffffff; }
   .dark-theme footer a {
-    color: #ADD8E6; }
+    color: #ffffff; }
 
 body {
   font: 100% Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: #333333;
-  background-color: #e6e6e6;
+  background-color: #ffffff;
   width: 100vw;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto; }
-  li {
-    list-style-type: disc;
-  }
-
-  li li {
-    list-style-type: square;
-  }
   body nav {
     padding: 0.75rem;
     justify-content: space-between;
@@ -55,28 +44,25 @@ body {
       body nav .nav-list a {
         margin-right: 2rem;
         text-decoration: none;
-        color: #5a8999; }
+        color: #333333; }
         body nav .nav-list a:hover {
           text-decoration: underline; }
     body nav .logo {
-      margin: 0; }
-    body nav .logo a {
+      margin: 0;
       font-weight: bold;
-      font-size: medium;
-      text-decoration: none;
-      color: #5a8999; }
+      font-size: medium; }
     body nav .night-mode-btn {
-      color: #5a8999;
+      color: #333333;
       background-color: transparent;
       border: none; }
       body nav .night-mode-btn svg {
-        fill: #5a8999; }
+        fill: #333333; }
   body main {
     width: 50%;
     margin-left: auto;
     margin-right: auto; }
     body main a {
-      color: #5a8999;
+      color: #14847E;
       text-decoration: none; }
       body main a:hover {
         text-decoration: underline; }
@@ -85,7 +71,7 @@ body {
     margin-left: auto;
     margin-right: auto; }
     body .article-wrapper a {
-      color: #5a8999;
+      color: #14847E;
       text-decoration: none; }
       body .article-wrapper a:hover {
         text-decoration: underline; }
@@ -121,7 +107,7 @@ body {
     border-top-width: 1px; }
     body footer a {
       margin: 0;
-      color: #5a8999;
+      color: #333333;
       display: inline-block;
       text-decoration: none; }
       body footer a:hover {
@@ -134,7 +120,7 @@ body {
   body .paragraph {
     text-align: justify; }
   body .link-btn {
-    color: #5a8999;
+    color: #333333;
     padding: 0.5rem;
     font-size: small;
     border-style: solid;
