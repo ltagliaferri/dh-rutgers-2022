@@ -1,5 +1,5 @@
 ---
-title: Modift an Eleventy Web App
+title: Modify an Eleventy Web App
 description: Tutorial on how to create a GitHub account and cloning our main repository.
 ---
 
