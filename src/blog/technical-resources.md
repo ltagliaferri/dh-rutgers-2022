@@ -40,7 +40,7 @@ description: A list of books, courses, videos, and other resources for learning 
 <div>
     <h2>General</h2>
     <ul class="text-lg">
-        <li><a href="https://www.humanitiesdataanalysis.org/" target="_blank">freeCodeCamp</a> offers courses across different tech stacks </li>
+        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a> offers courses across different tech stacks </li>
         <li><a href="https://cmu-lib.github.io/dhlg/global-resources/educational-resources/" target="_blank">Educational resources</a> from the <a href="https://cmu-lib.github.io/dhlg/" target="_blank">Digital Humanities Literacy Guidebook</a></li>
         <li><em><a href="https://programminghistorian.org/" target="_blank">Programming Historian</a></em> lessons and other resources</li>
     </ul>
