@@ -3,8 +3,6 @@ title: Contributing to a GitHub repository
 description: Making a fork, using GitHub Desktop, and opening a pull request.
 ---
 
-# Contributing to this repository
-
 The benefit of GitHub is that we can use it to collaborate on code together, so we will want to contribute to the parent, or upstream, repository. 
 
 [![Introduction to GitHub](https://img.youtube.com/vi/0lEtVpdYbQ4/0.jpg)](https://youtu.be/0lEtVpdYbQ4 "Introduction to GitHub")

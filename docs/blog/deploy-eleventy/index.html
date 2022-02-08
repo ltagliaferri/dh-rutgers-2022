@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fork an Eleventy Template</title>
+    <title>Deploy Eleventy on GitHub with GitHub Actions</title>
     <link rel="stylesheet" href="/dh-rutgers-2022/css/style.css" />
   </head>
   <body id="nightModeDiv">
@@ -27,9 +27,12 @@
   </nav>
   
     <div class="article-wrapper">
-      <h1>Fork an Eleventy Template</h1>
-      <article class="paragraph text-lg"><iframe width="560" height="315" src="https://www.youtube.com/embed/TGoleskxqgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://github.com/ltagliaferri/eleventy-academic-template">Eleventy Academic Template on GitHub</a></p>
+      <h1>Deploy Eleventy on GitHub with GitHub Actions</h1>
+      <article class="paragraph text-lg"><iframe width="560" height="315" src="https://www.youtube.com/embed/d7HDAbkJR7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Run the following command to generate keys:</p>
+<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;
+</code></pre>
+<p>Ensure that you copy and paste the above command exactly and run it in the Terminal within the repository we're using.</p>
 </article>
     </div>
     <footer>

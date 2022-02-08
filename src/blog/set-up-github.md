@@ -3,8 +3,6 @@ title: Set up GitHub
 description: Tutorial on how to create a GitHub account and cloning our main repository.
 ---
 
-# Setting up GitHub
-
 We are going to be using GitHub to collaborate. GitHub was purchased by Microsoft in 2018, and is worthy of much critique and criticism; however, it also offers an accessible way of learning Git for code version control and collaboration. GitHub is where a lot of open source software lives today, and where many software developers work. Alternatives to GitHub include [GitLab](https://about.gitlab.com/), [Bitbucket](https://bitbucket.org/product) (owned by Atlassian), [SourceForge](https://sourceforge.net/), or rolling your own Git server.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0lEtVpdYbQ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
