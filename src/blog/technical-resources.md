@@ -2,6 +2,7 @@
 title: Technical Resources
 description: A list of books, courses, videos, and other resources for learning technical skills.
 ---
+
 <div>
   <p class="text-lg paragraph">
     We will be exploring different DH tools but will not have time to go in depth with many of them. To continue learning on your own, here are recommended books and other resources.
