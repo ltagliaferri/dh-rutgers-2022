@@ -21,7 +21,7 @@ So, if I had an image of a laptop — `laptop.jpg` — in the `/docs/assets/imag
 
 And on the page it would look like this: 
 
-![Laptop photo](/src/img/laptop.jpg)
+![Laptop photo](https://raw.githubusercontent.com/ltagliaferri/dh-rutgers-2022/main/src/img/laptop.jpg)
 
 The `Laptop photo` text is alternative (or "alt") text, which renders when the image cannot render or otherwise be fetched. This is also useful text for accessibility as those who cannot see the image will be able to access the text through a screen reader, etc.
 
