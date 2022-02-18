@@ -1,6 +1,6 @@
 ---
 title: Downloading VS Code
-description: Tutorial on downloading Visual Studio Code.
+description: Tutorial on downloading Visual Studio Code
 ---
 
 # Visual Studio Code

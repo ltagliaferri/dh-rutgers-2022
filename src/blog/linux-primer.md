@@ -1,6 +1,6 @@
 ---
 title: A Linux Command Line Primer
-description: Once you complete this tutorial, you should have an understanding of how to use a terminal on a Linux (or macOS) computer or server.
+description: Once you complete this tutorial, you should have an understanding of how to use a terminal on a Linux (or macOS) computer or server
 ---
 
 _A version of this tutorial was originally published at [https://www.digitalocean.com/community/tutorials/a-linux-command-line-primer](https://www.digitalocean.com/community/tutorials/a-linux-command-line-primer)._

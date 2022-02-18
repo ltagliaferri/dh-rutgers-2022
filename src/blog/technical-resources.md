@@ -1,6 +1,6 @@
 ---
 title: Technical Resources
-description: A list of books, courses, videos, and other resources for learning technical skills.
+description: A list of books, courses, videos, and other resources for learning technical skills
 ---
 
 <div>

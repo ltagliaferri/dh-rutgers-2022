@@ -1,6 +1,6 @@
 ---
 title: Set up Discord
-description: We will be using a Discord server called DH Rutgers Spring 2022 throughout the semester.
+description: We will be using a Discord server called DH Rutgers Spring 2022 throughout the semester
 ---
 
 # Discord
