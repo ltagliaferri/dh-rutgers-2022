@@ -1,5 +1,5 @@
 ---
-title: How to add and modify icons in Eleventy
+title: How to Add and Modify Icons in Eleventy
 description: Add and modify icons for links out in the footer of an Eleventy site
 ---
 
