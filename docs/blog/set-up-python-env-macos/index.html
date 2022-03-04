@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How To Install Python 3 and Set Up a Local Programming Environment on macOS</title>
+    <link rel="stylesheet" href="/dh-rutgers-2022/css/style.css" />
+  </head>
+  <body id="nightModeDiv">
+    <nav>
+    <p class="logo"><a href="https://ltagliaferri.github.io/dh-rutgers-2022/">Digital Humanities Theories and Practice</a></p>
+  
+    <div class="nav-list">
+      <a href="https://ltagliaferri.github.io/dh-rutgers-2022/about/">Schedule</a>
+      <a href="https://ltagliaferri.github.io/dh-rutgers-2022/resources/">Resources</a>
+      <!-- <a href="https://ltagliaferri.github.io/dh-rutgers-2022/blog">Blog</a> -->
+      <button id="nightModeButton" class="night-mode-btn">
+        <svg style="width: 20px;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+          <g>
+            <g>
+              <path d="m275.4,500.7c-135,0-244.7-109.8-244.7-244.7 1.06581e-14-134.9 109.8-244.7 244.7-244.7 8.2,0 16.4,0.4 24.6,1.2 7.2,0.7 13.5,5.2 16.5,11.7s2.4,14.2-1.6,20.2c-23,33.8-35.2,73.3-35.2,114.2 0,105 78.7,192.2 183.2,202.6 7.2,0.7 13.5,5.2 16.5,11.7 3.1,6.5 2.4,14.2-1.6,20.2-45.8,67.4-121.4,107.6-202.4,107.6zm-12.5-448c-106.5,6.5-191.2,95.2-191.2,203.3 1.42109e-14,112.3 91.4,203.7 203.7,203.7 56.4,0 109.6-23.4 147.8-63.7-46.2-11.7-88.1-36.8-120.8-72.6-41.1-45.2-63.8-103.6-63.8-164.6 0.1-37.1 8.4-73.2 24.3-106.1z"/>
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+    <div class="article-wrapper">
+      <h1>How To Install Python 3 and Set Up a Local Programming Environment on macOS</h1>
+      <article class="paragraph text-lg"><p>Python is a versatile programming language that can be used for many different programming projects. First published in 1991 with a name inspired by the British comedy group Monty Python, the development team wanted to make Python a language that was fun to use. Python is a great choice for beginners and experienced developers alike. Python 3 is the most current version of the language and is considered to be the future of Python.</p>
+<p>This tutorial will guide you through installing Python 3 on your local macOS machine and setting up a programming environment via the command line.</p>
+<h2>Step 1 — Opening Terminal</h2>
+<p>We’ll be completing most of our installation and set up on the command line, which is a non-graphical way to interact with your computer. That is, instead of clicking on buttons, you’ll be typing in text and receiving feedback from your computer through text as well. The command line, also known as a shell, can help you modify and automate many of the tasks you do on a computer every day, and is an essential tool for software developers.</p>
+<p>The macOS Terminal is an application you can use to access the command line interface. Like any other application, you can find it by going into Finder, navigating to the Applications folder, and then into the Utilities folder. From here, double-click the Terminal like any other application to open it up. Alternatively, you can use Spotlight by holding down the <code>command</code> and <code>spacebar</code> keys to find Terminal by typing it out in the box that appears.</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/OSXSetUp/MacOSXSetUp.png" alt="macOS terminal"></p>
+<p>There are many more Terminal commands to learn that can enable you to do more powerful things. The article “<a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-the-linux-terminal">An Introduction to the Linux Terminal</a>” can get you better oriented with the Linux Terminal, which is similar to the macOS Terminal.</p>
+<h2>Step 2 — Installing Xcode</h2>
+<p>Xcode is an integrated development environment (IDE) that is comprised of software development tools for macOS. You may have Xcode installed already. To check, in your Terminal window, type:</p>
+<pre><code class="language-bash">xcode-select -p
+</code></pre>
+<p>If you receive the following output, then Xcode is installed:</p>
+<pre><code>/Library/Developer/CommandLineTools
+</code></pre>
+<p>If you received an error, then in your web browser install <a href="https://itunes.apple.com/us/app/xcode/id497799835?mt=12&amp;ign-mpt=uo%3D2">Xcode from the App Store</a> and accept the default options.</p>
+<p>Once Xcode is installed, return to your Terminal window. Next, you’ll need to install Xcode’s separate Command Line Tools app, which you can do by typing:</p>
+<pre><code class="language-bash">xcode-select --install
+</code></pre>
+<p>At this point, Xcode and its Command Line Tools app are fully installed, and we are ready to install the package manager Homebrew.</p>
+<h2>Step 3 — Installing and Setting Up Homebrew</h2>
+<p>While the OS X Terminal has a lot of the functionality of Linux Terminals and other Unix systems, it does not ship with a good package manager. A package manager is a collection of software tools that work to automate installation processes that include initial software installation, upgrading and configuring of software, and removing software as needed. They keep installations in a central location and can maintain all software packages on the system in formats that are commonly used. Homebrew provides OS X with a free and open source software package managing system that simplifies the installation of software on OS X.</p>
+<p>To install Homebrew, type this into your Terminal window:</p>
+<pre><code class="language-bash">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<p>Homebrew is made with Ruby, so it will be modifying your computer’s Ruby path. The curl command pulls a script from the specified URL. This script will explain what it will do and then pauses the process to prompt you to confirm. This provides you with a lot of feedback on what the script is going to be doing to your system and gives you the opportunity to verify the process.</p>
+<p>If you need to enter your password note that your keystrokes will not display in the Terminal window but they will be recorded, simply press the return key once you’ve entered your password. Otherwise press the letter y for “yes” whenever you are prompted to confirm the installation.</p>
+<p>Let’s walk through the flags that are associated with the curl command:</p>
+<ul>
+<li>The <code>-f</code> or <code>--fail</code> flag tells the Terminal window to give no HTML document output on server errors.</li>
+<li>The <code>-s</code> or <code>--silent</code> flag mutes curl so that it does not show the progress meter, and combined with the <code>-S</code> or <code>--show-error </code>flag it will ensure that curl shows an error message if it fails.</li>
+<li>The <code>-L</code> or <code>--location</code> flag will tell curl to redo the request to a new place if the server reports that the requested page has moved to a different location.</li>
+</ul>
+<p>Once the installation process is complete, we’ll put the Homebrew directory at the top of the PATH environment variable. This will ensure that Homebrew installations will be called over the tools that Mac OS X may select automatically that could run counter to the development environment we’re creating.</p>
+<p>You should create or open the <code>~/.bash_profile</code> file with the command-line text editor nano using the nano command:</p>
+<pre><code class="language-bash">nano ~/.bash_profile
+</code></pre>
+<p>Once the file opens up in the Terminal window, write the following:</p>
+<pre><code class="language-bash">export PATH=/usr/local/bin:$PATH
+</code></pre>
+<p>To save your changes, hold down the control key and the letter <code>o</code>, and when prompted press the return key. Now you can exit nano by holding the control key and the letter <code>x</code>.</p>
+<p>For these changes to activate, in the Terminal window, type:</p>
+<pre><code class="language-bash">source ~/.bash_profile
+</code></pre>
+<p>Once you have done this, the changes you have made to the PATH environment variable will be effective.</p>
+<p>We can make sure that Homebrew was successfully installed by typing:</p>
+<pre><code class="language-bash">brew doctor
+</code></pre>
+<p>If no updates are required at this time, the Terminal output will read:</p>
+<pre><code>Your system is ready to brew.
+</code></pre>
+<p>Otherwise, you may get a warning to run another command such as brew update to ensure that your installation of Homebrew is up to date.</p>
+<p>Once Homebrew is ready, you can install Python 3.</p>
+<h2>Step 4 — Installing Python 3</h2>
+<p>You can use Homebrew to search for everything you can install with the brew search command, but to provide us with a shorter list, let’s instead search for just the available Python-related packages or modules:</p>
+<pre><code class="language-bash">brew search python
+</code></pre>
+<p>The Terminal will output a list of what you can install, like this:</p>
+<pre><code>app-engine-python          micropython                python3                 
+boost-python               python                     wxpython                 
+gst-python                 python-markdown            zpython                  
+homebrew/apache/mod_python               homebrew/versions/gst-python010        
+homebrew/python/python-dbus              Caskroom/cask/kk7ds-python-runtime     
+homebrew/python/vpython                  Caskroom/cask/mysql-connector-python   
+</code></pre>
+<p>Python 3 will be among the items on the list. Let’s go ahead and install it:</p>
+<pre><code class="language-bash">brew install python3
+</code></pre>
+<p>The Terminal window will give you feedback regarding the installation process of Python 3, it may take a few minutes before installation is complete.</p>
+<p>Along with Python 3, Homebrew will install pip, setuptools and wheel.</p>
+<p>A tool for use with Python, we will use pip to install and manage programming packages we may want to use in our development projects. You can install Python packages by typing:</p>
+<pre><code class="language-bash">pip3 install package_name
+</code></pre>
+<p>Here, <code>package_name</code> can refer to any Python package or library, such as Django for web development or NumPy for scientific computing. So if you would like to install NumPy, you can do so with the command pip3 install numpy.</p>
+<p>setuptools facilitates packaging Python projects, and wheel is a built-package format for Python that can speed up your software production by reducing the number of times you need to compile.</p>
+<p>To check the version of Python 3 that you installed, you can type:</p>
+<pre><code class="language-bash">python3 --version
+</code></pre>
+<p>This will output the specific version of Python that is currently installed, which will by default be the most up-to-date stable version of Python 3 that is available.</p>
+<p>To update your version of Python 3, you can first update Homebrew and then update Python:</p>
+<pre><code class="language-bash">brew update
+brew upgrade python3
+</code></pre>
+<p>It is good practice to ensure that your version of Python is up-to-date.</p>
+<h2>Step 5 — Creating a Virtual Environment</h2>
+<p>Now that we have Xcode, Homebrew, and Python installed, we can go on to create our programming environment.</p>
+<p>Virtual environments enable you to have an isolated space on your computer for Python projects, ensuring that each of your projects can have its own set of dependencies that won’t disrupt any of your other projects.</p>
+<p>Setting up a programming environment provides us with greater control over our Python projects and over how different versions of packages are handled. This is especially important when working with third-party packages.</p>
+<p>You can set up as many Python programming environments as you would like. Each environment is basically a directory or folder in your computer that has a few scripts in it to make it act as an environment.</p>
+<p>Choose which directory you would like to put your Python programming environments in, or create a new directory with mkdir, as in:</p>
+<pre><code class="language-bash">mkdir Environments
+cd Environments
+</code></pre>
+<p>Once you are in the directory where you would like the environments to live, you can create an environment by running the following command:</p>
+<pre><code class="language-bash">python3.9 -m venv my_env
+</code></pre>
+<p>Essentially, this command creates a new directory (in this case called <code>my_env</code>) that contains a few items:</p>
+<ul>
+<li>The <code>pyvenv.cfg</code> file points to the Python installation that you used to run the command.</li>
+<li>The lib subdirectory contains a copy of the Python version and has a site-packages subdirectory inside it that starts out empty but will eventually hold the relevant third-party modules that you install.</li>
+<li>The include subdirectory compiles packages.</li>
+<li>The <code>bin</code> subdirectory has a copy of the Python binary along with the activate shell script that is used to set up the environment.</li>
+</ul>
+<p>Together, these files work to make sure that your projects are isolated from the broader context of your local machine, so that system files and project files don’t mix. This is good practice for version control and to ensure that each of your projects has access to the particular packages that it needs.</p>
+<p>To use this environment, you need to activate it, which you can do by typing the following command that calls the activate script:</p>
+<pre><code class="language-bash">source my_env/bin/activate
+</code></pre>
+<p>Your prompt will now be prefixed with the name of your environment, in this case it is called <code>my_env</code>:</p>
+<pre><code>(my_env) Sammys-MBP:~ sammy$
+</code></pre>
+<p>This prefix lets us know that the environment <code>my_env</code> is currently active, meaning that when we create programs here they will use only this particular environment’s settings and packages.</p>
+<blockquote>
+<p><strong>Note</strong>: Within the virtual environment, you can use the command python instead of python3, and pip instead of pip3 if you would prefer. If you use Python 3 on your machine outside of an environment, you’ll need to use the python3 and pip3 commands exclusively, as python and pip will call an earlier version of Python.</p>
+</blockquote>
+<p>After following these steps, your virtual environment is ready to use.</p>
+<h2>Step 6 — Creating a Sample Program</h2>
+<p>Now that we have our virtual environment set up, let’s create a traditional “Hello, World!” program. This will make sure that our environment is working and gives us the opportunity to become more familiar with Python if we aren’t already.</p>
+<p>To do this, we’ll open up a command-line text editor such as nano and create a new file:</p>
+<pre><code class="language-bash">nano hello.py
+</code></pre>
+<p>Once the text file opens up in Terminal we’ll type out our program:</p>
+<pre><code class="language-bash">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>Exit nano by typing the <code>control</code> and <code>x</code> keys, and when prompted to save the file press <code>y</code>.</p>
+<p>Once you exit out of nano and return to your shell, let’s run the program:</p>
+<pre><code class="language-bash">python hello.py
+</code></pre>
+<p>The <code>hello.py</code> program that you just created should cause Terminal to produce the following output:</p>
+<pre><code>Hello, World!
+</code></pre>
+<p>To leave the environment, type the command <code>deactivate</code> and you’ll return to your original directory.</p>
+<h2>Conclusion</h2>
+<p>Congratulations! At this point you have a Python 3 programming environment set up on your local Mac OS X machine and can begin a coding project!</p>
+<p><em>A version of this tutorial was previously published at <a href="https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-macos">DigitalOcean</a>.</em></p>
+</article>
+    </div>
+    <footer>
+  <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" class="logo">CC BY-NC 4.0</a> 2022</p>
+
+  <p><a href="https://github.com/ltagliaferri/dh-rutgers-2022" target="_blank" class="logo">View code repo</a></p>
+
+</footer>
+
+    <script src="/dh-rutgers-2022/js/script.js"></script>
+    
+  </body>
+</html>
