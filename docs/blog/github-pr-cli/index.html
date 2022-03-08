@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How To Create a Pull Request on GitHub</title>
+    <link rel="stylesheet" href="/dh-rutgers-2022/css/style.css" />
+  </head>
+  <body id="nightModeDiv">
+    <nav>
+    <p class="logo"><a href="https://ltagliaferri.github.io/dh-rutgers-2022/">Digital Humanities Theories and Practice</a></p>
+  
+    <div class="nav-list">
+      <a href="https://ltagliaferri.github.io/dh-rutgers-2022/about/">Schedule</a>
+      <a href="https://ltagliaferri.github.io/dh-rutgers-2022/resources/">Resources</a>
+      <!-- <a href="https://ltagliaferri.github.io/dh-rutgers-2022/blog">Blog</a> -->
+      <button id="nightModeButton" class="night-mode-btn">
+        <svg style="width: 20px;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+          <g>
+            <g>
+              <path d="m275.4,500.7c-135,0-244.7-109.8-244.7-244.7 1.06581e-14-134.9 109.8-244.7 244.7-244.7 8.2,0 16.4,0.4 24.6,1.2 7.2,0.7 13.5,5.2 16.5,11.7s2.4,14.2-1.6,20.2c-23,33.8-35.2,73.3-35.2,114.2 0,105 78.7,192.2 183.2,202.6 7.2,0.7 13.5,5.2 16.5,11.7 3.1,6.5 2.4,14.2-1.6,20.2-45.8,67.4-121.4,107.6-202.4,107.6zm-12.5-448c-106.5,6.5-191.2,95.2-191.2,203.3 1.42109e-14,112.3 91.4,203.7 203.7,203.7 56.4,0 109.6-23.4 147.8-63.7-46.2-11.7-88.1-36.8-120.8-72.6-41.1-45.2-63.8-103.6-63.8-164.6 0.1-37.1 8.4-73.2 24.3-106.1z"/>
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  
+    <div class="article-wrapper">
+      <h1>How To Create a Pull Request on GitHub</h1>
+      <article class="paragraph text-lg"><p>Git is an open-source distributed version control system that makes collaborative software projects more manageable. Many projects maintain their files in a Git repository, and platforms like GitHub have made sharing and contributing to code accessible, valuable, and effective.</p>
+<p>Open-source projects that are hosted in public repositories benefit from contributions made by the broader developer community through <strong>pull requests</strong>, which request that a project accept changes you have made to its code repository.</p>
+<p>This tutorial will guide you through making a pull request to a Git repository through the command line so that you can contribute to open-source software projects.</p>
+<h2>Prerequisites</h2>
+<p>You should have Git installed on your local machine. You can check if Git is installed on your computer and go through the installation process for your operating system by following <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-contributing-to-open-source-projects-and-installing-git#check-if-git-is-installed">this guide</a>.</p>
+<p>You’ll also need to have or create a GitHub account. You can do so through the GitHub website, <a href="https://github.com/">github.com</a>, and can either log in or create your account.</p>
+<p>As of November 2020, GitHub removed password-based authentication. For this reason, you will need to create a <a href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">personal access token</a> or add your <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">SSH public key information</a> in order to access GitHub repositories through the command line.</p>
+<p>Finally, you should identify an open-source software project to contribute to. You can become more familiar with open-source projects by reading through <a href="https://www.digitalocean.com/community/tutorials/an-introduction-to-contributing-to-open-source-projects-and-installing-git">this introduction</a>.</p>
+<h2>Create a Copy of the Repository</h2>
+<p>A <strong>repository</strong>, or <strong>repo</strong> for short, is essentially the main folder of a project. The repository contains all the relevant project files, including documentation, and also stores the revision history for each file. On GitHub, repositories can have multiple collaborators and can either be public or private.</p>
+<p>In order to work on an open-source project, you will first need to make your own copy of the repository. To do this, you should fork the repository and then clone it so that you have a local working copy.</p>
+<h3>Fork the Repository</h3>
+<p>You can fork a repository on GitHub by navigating with your browser to the GitHub URL of the open-source project you would like to contribute to.</p>
+<p>GitHub repository URLs will reference both the username associated with the owner of the repository, as well as the repository name. For example, DigitalOcean Community (username: <code>do-community</code>) is the owner of the <a href="https://github.com/do-community/cloud_haiku">cloud_haiku</a> project repository, so the GitHub URL for that project is:</p>
+<pre><code>https://github.com/do-community/cloud_haiku
+</code></pre>
+<p>In the above example, do-community is the username and cloud_haiku is the repository name.</p>
+<p>Once you have identified the project you would like to contribute to, you can navigate to the URL, which will be formatted like so:</p>
+<pre><code>https://github.com/&lt;^&gt;username&lt;^&gt;/&lt;^&gt;repository&lt;^&gt;
+</code></pre>
+<p>Or, you can search for the project using the GitHub search bar.</p>
+<p>When you’re on the main page for the repository, you’ll see a <strong>Fork</strong> button on your upper right-hand side of the page, underneath your user icon:</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/PullRequest/ch_gh_arrow_blink.gif" alt="GitHub Forking"></p>
+<p>Click on the fork button to start the forking process. Within your browser window, you’ll receive a notification that the repository you’re forking is being processed:</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/PullRequest/GitHub_Forking.png" alt="Forking on GitHub"></p>
+<p>Once the process is done, your browser will go to a screen similar to the previous repository screen, except that at the top you will see your username before the repository name, and in the URL it will also say your username before the repository name.</p>
+<p>So, in the example above, instead of <strong>do-community / cloud_haiku</strong> at the top of the page, you’ll see <strong>&lt;^&gt;your-username&lt;^&gt; / cloud_haiku</strong>, and the new URL will look like this:</p>
+<pre><code>https://github.com/&lt;^&gt;your-username&lt;^&gt;/cloud_haiku
+</code></pre>
+<p>With the repository forked, you’re ready to clone it so that you have a local working copy of the code base.</p>
+<h3>Clone the Repository</h3>
+<p>To make your own local copy of the repository you would like to contribute to, let’s first open up a terminal window.</p>
+<p>We’ll use the <code>git clone</code> command along with the URL that points to your fork of the repository.</p>
+<p>This URL will be similar to the URL above, except now it will end with <code>.git</code>. In the <code>cloud_haiku</code> example above, the URL will look like this:</p>
+<pre><code>https://github.com/&lt;^&gt;your-username&lt;^&gt;/cloud_haiku.git
+</code></pre>
+<p>You can alternatively copy the URL by using the green <strong>“⤓ Code”</strong> button from your repository page that you forked from the original repository page. Once you click the button, you’ll be able to copy the URL by clicking the clipboard button next to the URL:</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/PullRequest/ch_gh_codebox_arrow.png" alt="GitHub Clone or Download"></p>
+<p>Once we have the URL, we’re ready to clone the repository. To do this, we’ll combine the <code>git clone</code> command with the repository URL from the command line in a terminal window:</p>
+<pre><code class="language-bash">git clone https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;repository&lt;^&gt;.git
+</code></pre>
+<p>Now that we have a local copy of the code, we can move on to creating a new branch on which to work with the code.</p>
+<h2>Create a New Branch</h2>
+<p>Whenever you work on a collaborative project, you and other programmers contributing to the repository will have different ideas for new features or fixes at once. Some of these new features will not take significant time to implement, but some of them will be ongoing. Because of this, it is important to branch the repository so that you are able to manage the workflow, isolate your code, and control what features make it back to the main branch of the project repository.</p>
+<p>The primary branch of a project repository is usually called the <strong>main</strong> branch. A common best practice is to consider anything on the main branch as being deployable for others to use at any time.</p>
+<p>&lt;$&gt;[note]
+<strong>Note</strong>: In June 2020, GitHub updated its terminology to refer to default source code branches as the <code>main</code> branch, instead of the <code>master</code> branch. If your default branch still appears as <code>master</code> you can update it to <code>main</code> by <a href="https://docs.github.com/en/github/administering-a-repository/managing-branches-in-your-repository/changing-the-default-branch">changing the default branch settings</a>.
+&lt;$&gt;</p>
+<p>When creating a branch, it is very important that you create your new branch off of the main branch. You should also make sure that your branch name is a descriptive one. Rather than calling it <code>my-branch</code>, you should go with something like <code>frontend-hook-migration</code> or <code>fix-documentation-typos</code> instead.</p>
+<p>To create the branch from our terminal window, let’s change our directory so that we are working in the directory of the repository. Be sure to use the actual name of the repository (such as <code>cloud_haiku</code>) to change into that directory.</p>
+<pre><code class="language-bash">cd repository
+</code></pre>
+<p>Now, we’ll create our new branch with the <code>git branch</code> command. Make sure you name it descriptively so that others working on the project understand what you are working on.</p>
+<pre><code class="language-bash">git branch &lt;^&gt;new-branch&lt;^&gt;
+</code></pre>
+<p>Now that our new branch is created, we can switch to make sure that we are working on that branch by using the <code>git checkout</code> command:</p>
+<pre><code class="language-bash">git checkout &lt;^&gt;new-branch&lt;^&gt;
+</code></pre>
+<p>Once you enter the git checkout command, you will receive the following output:</p>
+<pre><code>[secondary_label Output]
+Switched to branch 'new-branch'
+</code></pre>
+<p>Alternatively, you can condense the above two commands, creating and switching to a new branch, with the following command and <code>-b</code> flag:</p>
+<pre><code class="language-bash">git checkout -b &lt;^&gt;new-branch&lt;^&gt;
+</code></pre>
+<p>If you want to switch back to <code>main</code>, you’ll use the <code>checkout</code> command with the name of the main branch:</p>
+<pre><code class="language-bash">git checkout main
+</code></pre>
+<p>The <code>checkout</code> command will allow you to switch between multiple branches, so you can potentially work on multiple features at once.</p>
+<p>At this point, you can now modify existing files or add new files to the project on your own branch.</p>
+<h2>Make Changes Locally</h2>
+<p>To demonstrate making a pull request, let’s use the example <code>cloud_haiku</code> repo and create a new file in our local copy. Use your preferred text editor to create a new file so that we can add a new haiku poem as explained in the <a href="https://github.com/do-community/cloud_haiku#contributing">contributing guidelines</a>. For example, we can use nano and call our example file <code>filename.md</code>. You’ll need to call your file an original name with the <code>.md</code> extension for Markdown.</p>
+<pre><code class="language-bash">nano &lt;^&gt;filename.md&lt;^&gt;
+</code></pre>
+<p>Next, we'll some text to the new file, following the [contributing guidelines](https://github.com/do-community/cloud_haiku#contributing. We’ll need to use the Jekyll format and add a haiku with line breaks. The following file is an example file, as you’ll need to contribute an original haiku.</p>
+<pre><code>[label filename.md]
+---
+layout: haiku
+title: Octopus Cloud
+author: Sammy
+---
+
+Distributed cloud &lt;br&gt;
+Like the octopuses' minds &lt;br&gt;
+Across the network &lt;br&gt;
+</code></pre>
+<p>Once you’ve included your content, save and close the file. If you used nano, do so by pressing <code>CTRL + X</code>, then <code>Y</code>, and then <code>ENTER</code>.</p>
+<p>Once you have modified an existing file or added a new file to the project of your choice, you can stage it to your local repository, which we can do with the <code>git add</code> command. In our example, <code>filename.md</code>, we will type the following command.</p>
+<pre><code class="language-bash">git add &lt;^&gt;filename.md&lt;^&gt; 
+</code></pre>
+<p>We passed the name of the file we created to this command to stage it to our local repository. This ensures  your file is ready to be added.</p>
+<p>If you are looking to add all the files you have modified in a particular directory, you can stage them all with the following command:</p>
+<pre><code class="language-bash">git add . 
+</code></pre>
+<p>Here, the full stop or period will add all relevant files.</p>
+<p>If you are looking to recursively add all changes including those in subdirectories, you can type:</p>
+<pre><code class="language-bash">git add -A
+</code></pre>
+<p>Or, alternatively, you can type <code>git add -all</code> for all new files to be staged.</p>
+<p>With our file staged, we’ll want to record the changes that we made to the repository with the <code>git commit</code> command.</p>
+<h2>Commit Changes</h2>
+<p>The <strong>commit message</strong> is an important aspect of your code contribution; it helps the maintainers and other contributors to fully understand the change you have made, why you made it, and how significant it is. Additionally, commit messages provide a historical record of the changes for the project at large, helping future contributors along the way.</p>
+<p>If we have a very short message, we can record that with the <code>-m</code> flag and the message in quotes. In our example of adding a haiku, our <code>git commit</code> may be similar to the following.</p>
+<pre><code class="language-bash">git commit -m &quot;Added a new haiku in filename.md&quot;
+</code></pre>
+<p>Unless it is a minor or expected change, we may want to include a lengthier commit message so that our collaborators are fully up to speed with our contribution. To record this larger message, we will run the <code>git commit</code> command which will open the default text editor:</p>
+<pre><code class="language-bash">git commit
+</code></pre>
+<p>When running this command, you may notice that you are in the vim editor, which you can quit by typing <code>:q</code>. If you would like to configure your default text editor, you can do so with the <code>git config</code> command, and set nano as the default editor, for example:</p>
+<pre><code class="language-bash">git config --global core.editor &quot;nano&quot;
+</code></pre>
+<p>Or vim:</p>
+<pre><code class="language-bash">git config --global core.editor &quot;vim&quot;
+</code></pre>
+<p>After running the <code>git commit</code> command, depending on the default text editor you’re using, your terminal window should display a document ready for you to edit that will look similar to this:</p>
+<pre><code>[label GNU nano 2.0.6 File: …username/repository/.git/COMMIT_EDITMSG]
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch &lt;^&gt;new-branch&lt;^&gt;
+# Your branch is up-to-date with 'origin/&lt;^&gt;new-branch&lt;^&gt;'.
+#
+# Changes to be committed:
+#       modified:   &lt;^&gt;new-feature.py&lt;^&gt;
+#
+</code></pre>
+<p>Underneath the introductory comments, you should add the commit message to the text file.</p>
+<p>To write a useful commit message, you should include a summary on the first line that is around 50 characters long. Under this, and broken up into digestible sections, you should include a description that states the reason you made this change, how the code works, and additional information that will contextualize and clarify it for others to review the work when merging it. Try to be as helpful and proactive as possible to ensure that those maintaining the project are able to fully understand your contribution.</p>
+<h2>Push Changes</h2>
+<p>Once you have saved and exited the commit message text file, you can verify what Git will be committing with the following command:</p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p>Depending on the changes that you have made, you will receive output that resembles this:</p>
+<pre><code>[secondary_label Output]
+On branch &lt;^&gt;new-branch&lt;^&gt;
+nothing to commit, working tree clean
+</code></pre>
+<p>At this point you can use the <code>git push</code> command to push the changes to the current branch of your forked repository:</p>
+<pre><code class="language-bash">git push --set-upstream origin new-branch
+</code></pre>
+<p>The command will provide you with output to let you know of the progress, and it will look similar to the following:</p>
+<pre><code>[secondary_label Output]
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 336 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;repository&lt;^&gt;.git
+   a1f29a6..79c0e80  &lt;^&gt;new-branch&lt;^&gt;  -&gt; &lt;^&gt;new-branch&lt;^&gt;
+Branch &lt;^&gt;new-branch&lt;^&gt; set up to track remote branch &lt;^&gt;new-branch&lt;^&gt; from origin.
+</code></pre>
+<p>You can now navigate to the forked repository on your GitHub webpage and toggle to the branch you pushed to see the changes you have made in-browser.</p>
+<p>At this point, it is possible to <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github#create-pull-request">make a pull request</a> to the original repository, but if you have not already done so, you’ll want to make sure that your local repository is up-to-date with the upstream repository.</p>
+<h2>Update Local Repository</h2>
+<p>While you are working on a project alongside other contributors, it is important for you to keep your local repository up-to-date with the project as you don’t want to make a pull request for code that will cause conflicts. To keep your local copy of the code base updated, you’ll need to sync changes.</p>
+<p>We’ll first go over configuring a remote for the fork, then syncing the fork.</p>
+<h3>Configure a Remote for the Fork</h3>
+<p><strong>Remote repositories</strong> make it possible for you to collaborate with others on a Git project. Each remote repository is a version of the project that is hosted on the Internet or a network you have access to. Each remote repository should be accessible to you as either read-only or read-write, depending on your user privileges.</p>
+<p>In order to be able to sync changes you make in a fork with the original repository you’re working with, you need to configure a remote that references the upstream repository. You should set up the remote to the upstream repository only once.</p>
+<p>Let’s first check which remote servers you have configured. The <code>git remote</code> command will list whatever remote repository you have already specified, so if you cloned your repository as we did above, you’ll at least see the origin repository, which is the default name given by Git for the cloned directory.</p>
+<p>From the directory of the repository in our terminal window, let’s use the <code>git remote</code> command along with the <code>-v</code> flag to display the URLs that Git has stored along with the relevant remote shortnames (as in “origin”):</p>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<p>Since we cloned a repository, our output should look similar to this:</p>
+<pre><code>[secondary_label Output]
+origin    https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;forked-repository&lt;^&gt;.git (fetch)
+origin    https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;forked-repository&lt;^&gt;.git (push)
+</code></pre>
+<p>If you have previously set up more than one remote, the <code>git remote -v</code> command will provide a list of all of them.</p>
+<p>Next, we’ll specify a new remote upstream repository for us to sync with the fork. This will be the original repository that we forked from. We’ll do this with the <code>git remote add</code> command.</p>
+<pre><code class="language-bash">git remote add upstream https://github.com/&lt;^&gt;original-owner-username&lt;^&gt;/&lt;^&gt;original-repository&lt;^&gt;.git
+</code></pre>
+<p>For our <code>cloud_haiku</code> example, this command would be the following:</p>
+<pre><code class="language-bash">git remote add upstream https://github.com/do-community/cloud_haiku.git
+</code></pre>
+<p>In this example, <code>upstream</code> is the shortname we have supplied for the remote repository since in terms of Git, “upstream” refers to the repository that we cloned from. If we want to add a remote pointer to the repository of a collaborator, we may want to provide that collaborator’s username or a shortened nickname for the shortname.</p>
+<p>We can verify that our remote pointer to the upstream repository was properly added by using the <code>git remote -v</code> command again from the repository directory:</p>
+<pre><code class="language-bash">git remote -v
+</code></pre>
+<pre><code>[secondary_label Output]
+origin    https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;forked-repository&lt;^&gt;.git (fetch)
+origin    https://github.com/&lt;^&gt;your-username&lt;^&gt;/&lt;^&gt;forked-repository&lt;^&gt;.git (push)
+upstream    https://github.com/&lt;^&gt;original-owner-username&lt;^&gt;/&lt;^&gt;original-repository&lt;^&gt;.git (fetch)
+upstream    https://github.com/&lt;^&gt;original-owner-username&lt;^&gt;/&lt;^&gt;original-repository&lt;^&gt;.git (push)
+</code></pre>
+<p>Now you can refer to <code>upstream</code> on the command line instead of writing the entire URL, and you are ready to sync your fork with the original repository.</p>
+<h3>Sync the Fork</h3>
+<p>Once we have configured a remote that references the upstream and original repository on GitHub, we are ready to sync our fork of the repository to keep it up-to-date.</p>
+<p>To sync our fork, from the directory of our local repository in a terminal window, we’ll use the <code>git fetch</code> command to fetch the branches along with their respective commits from the upstream repository. Since we used the shortname “upstream” to refer to the upstream repository, we’ll pass that to the command:</p>
+<pre><code class="language-bash">git fetch upstream
+</code></pre>
+<p>Depending on how many changes have been made since we forked the repository, your output may be different, and may include a few lines on counting, compressing, and unpacking objects. Your output will end similarly to the following lines, but may vary depending on how many branches are part of the project:</p>
+<pre><code>[secondary_label Output]
+From https://github.com/&lt;^&gt;original-owner-username&lt;^&gt;/&lt;^&gt;original-repository&lt;^&gt;
+ * [new branch]      main     -&gt; upstream/main
+</code></pre>
+<p>Now, commits to the main branch will be stored in a local branch called <code>upstream/main</code>.</p>
+<p>Let’s switch to the local main branch of our repository:</p>
+<pre><code class="language-bash">git checkout main
+</code></pre>
+<pre><code>[secondary_label Output]
+Switched to branch 'main'
+</code></pre>
+<p>We’ll now merge any changes that were made in the original repository’s main branch, that we will access through our local <code>upstream/main</code> branch, with our local main branch:</p>
+<pre><code class="language-bash">git merge upstream/main
+</code></pre>
+<p>The output here will vary, but it will begin with <code>Updating</code> if changes have been made, or <code>Already up-to-date</code>. if no changes have been made since you forked the repository.</p>
+<p>Your fork’s main branch is now in sync with the upstream repository, and any local changes you made were not lost.</p>
+<p>Depending on your own workflow and the amount of time you spend on making changes, you can sync your fork with the upstream code of the original repository as many times as it makes sense for you. But you should certainly sync your fork right before making a pull request to make sure you don’t contribute conflicting code.</p>
+<h2>Create Pull Request</h2>
+<p>At this point, you are ready to make a pull request to the original repository.</p>
+<p>You should navigate to your forked repository, and press the “New pull request” button on your left-hand side of the page.</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/PullRequest/PRButton.png" alt="GitHub Pull Request Button"></p>
+<p>You can modify the branch on the next screen. On either side you can select the appropriate repository from the drop-down menu and the appropriate branch.</p>
+<p>Once you have chosen, for example, the main branch of the original repository on the left-hand side, and the &lt;^&gt;new-branch&lt;^&gt; of your forked repository of the right-hand side, you should receive a screen that states your branches can be merged if there is no competing code:</p>
+<p><img src="https://assets.digitalocean.com/articles/eng_python/PullRequest/PullRequest.png" alt="GitHub Pull Request"></p>
+<p>You should add a title and a comment to the appropriate fields and then press the “<strong>Create pull request</strong>” button.</p>
+<p>At this point, the maintainers of the original repository will decide whether or not to accept your pull request. They may ask for you to edit or revise your code prior to accepting the pull request.</p>
+<h2>Conclusion</h2>
+<p>At this point, you have successfully sent a pull request to an open-source software repository. Following this, you should make sure to update and rebase your code while you are waiting to have it reviewed. Project maintainers may ask for you to rework your code, so you should be prepared to do so.</p>
+<p>Contributing to open-source projects — and becoming an active open-source developer — can be a rewarding experience. Making regular contributions to software you frequently use allows you to make sure that that software is as valuable to other end users as it can be.</p>
+<p>If you’re interested in learning more about Git and collaborating on open-source software, you can read our tutorial series entitled <em><a href="https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source">An Introduction to Open Source</a></em>. If you’re already familiar with Git, and would like a cheat sheet, you can refer to “<a href="https://www.digitalocean.com/community/tutorials/how-to-use-git-a-reference-guide">How To Use Git: A Reference Guide</a>.”</p>
+<p><em>A version of this tutorial was published at <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github</a></em>.</p>
+</article>
+    </div>
+    <footer>
+  <p><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" class="logo">CC BY-NC 4.0</a> 2022</p>
+
+  <p><a href="https://github.com/ltagliaferri/dh-rutgers-2022" target="_blank" class="logo">View code repo</a></p>
+
+</footer>
+
+    <script src="/dh-rutgers-2022/js/script.js"></script>
+    
+  </body>
+</html>
