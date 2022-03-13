@@ -3,7 +3,7 @@ title: Python zip() Function
 description: Loop across two lists with the built-in Python zip() function
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1cgyf2erzOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/FSO17-WR4bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Code is below:
 
